@@ -1,0 +1,15 @@
+import pandas as pd
+
+data = pd.read_csv("https://storage.googleapis.com/covid19-open-data/v3/epidemiology.csv")
+
+print("Covid-19 Data from 2020-03-16 to 2020-03-21: ")
+print("")
+print(data.iloc[75:81])
+
+print("")
+print("Highest new confirmed cases: ")
+print(data.loc[data["new_confirmed"].idxmax()])
+
+print("")
+print("Lowest new confirmed cases: ")
+print(data.loc[data["new_confirmed"].idxmin()])
